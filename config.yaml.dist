@@ -1,0 +1,5 @@
+cli:
+    network: mainnet
+    era: allegra
+    dir: '.'
+    shelleyGenesisPath: '/home/user/cardano/mainnet-shelley-genesis.json'

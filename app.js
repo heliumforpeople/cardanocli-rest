@@ -7,6 +7,8 @@ const {cleanTMPFiles} = require('./src/helper');
 
 let basicRouter = require('./routes/v1/basic');
 let walletRouter = require('./routes/v1/wallet');
+let poolRouter = require('./routes/v1/pool');
+let transactionRouter = require('./routes/v1/transaction');
 
 var app = express();
 
@@ -18,6 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/v1', basicRouter);
 app.use('/api/v1', walletRouter);
+app.use('/api/v1', poolRouter);
+app.use('/api/v1', transactionRouter);
 
 // Clean /public/tmp/* files older than 10min every 5min
 cleanTMPFiles();

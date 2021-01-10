@@ -1,3 +1,7 @@
+config.yaml
+/tmp
+/priv
+
 # Logs
 logs
 *.log

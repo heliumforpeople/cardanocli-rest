@@ -1,0 +1,36 @@
+{
+  "name": "cardanocli-rest",
+  "version": "1.0.0",
+  "description": "REST API for remote cardano-cli control",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "start:mon": "nodemon ./bin/www",
+    "start:debug": "DEBUG=express:* node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Berry-Pool/cardanocli-rest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Berry-Pool/cardanocli-rest/issues"
+  },
+  "homepage": "https://github.com/Berry-Pool/cardanocli-rest#readme",
+  "dependencies": {
+    "cardanocli-js": "git+https://github.com/Berry-Pool/cardanocli-js.git",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "find-remove": "^2.0.3",
+    "js-yaml": "^4.0.0",
+    "morgan": "~1.9.1",
+    "node-cron": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

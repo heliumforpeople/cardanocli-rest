@@ -34,7 +34,7 @@ router.get('/queryTip', function(req, res, next) {
  * Return KES Period number
  */
 router.get('/KESPeriod', function(req, res, next) {
-    res.send(cardanoCli.KESPeriod());
+    res.send(""+cardanoCli.KESPeriod());
 });
 
 /**

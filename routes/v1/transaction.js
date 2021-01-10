@@ -48,13 +48,6 @@ router.post('/transactionAssemble', function(req, res, next) {
 });
 
 /**
- * Assemble Witnessed Transaction File and return file Path
- */
-router.post('/transactionAssemble', function(req, res, next) {
-    res.send(cardanoCli.transactionAssemble(req.body));
-});
-
-/**
  * Receive Transaction file and return Tx ID
  */
 router.post('/transactionTxid', function(req, res, next) {

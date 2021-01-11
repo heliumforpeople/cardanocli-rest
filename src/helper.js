@@ -75,7 +75,7 @@ exports.generateUrl = (request, ...args) =>
  * @param {*} symlinkName - Symlink file name
  */
 exports.createSymlink = (filePath, symlinkName) => {
-  const { relative, resolve } = require("path");
+  const { resolve } = require("path");
   const fs = require("fs");
   const absBasePath = resolve(config.cli.dir);
   const absFilePath = resolve(filePath);
@@ -87,7 +87,7 @@ exports.createSymlink = (filePath, symlinkName) => {
     fs.statSync(absFilePath).isFile()
   ) {
     fs.symlink(
-      relative(ABSOLUTE_TMP, filePath),
+      absFilePath,
       `${ABSOLUTE_TMP}/${symlinkName}`,
       (err) => err && console.log(err)
     );
@@ -106,10 +106,10 @@ exports.cleanTMPFiles = () => {
   cron.schedule("*/10 * * * *", function () {
     let result = {};
 
-    result = findRemoveSync(ABSOLUTE_TMP, {
-      age: { seconds: config.helper.tmpFileTTL },
-      files: "*.*",
-    });
+    // result = findRemoveSync(ABSOLUTE_TMP, {
+    //   age: { seconds: config.helper.tmpFileTTL },
+    //   files: "*.*",
+    // });
 
     let count = Object.keys(result).length;
 

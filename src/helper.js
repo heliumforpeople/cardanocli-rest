@@ -100,21 +100,36 @@ exports.createSymlink = (filePath, symlinkName) => {
  * Clean Public temporary folder
  */
 exports.cleanTMPFiles = () => {
-  const findRemoveSync = require("find-remove");
   const cron = require("node-cron");
+  const tmpFileTTL = config.helper.tmpFileTTL;
 
-  cron.schedule("*/10 * * * *", function () {
-    let result = {};
+  cron.schedule("*/2 * * * *", () => {
+    let files = fs.readdirSync(ABSOLUTE_TMP);
+    let result = [];
 
-    // result = findRemoveSync(ABSOLUTE_TMP, {
-    //   age: { seconds: config.helper.tmpFileTTL },
-    //   files: "*.*",
-    // });
+    files.forEach((fileName) => {
+      if (".gitkeep" !== fileName) {
+        let filePath = `${ABSOLUTE_TMP}/${fileName}`;
+        let fileStat = fs.lstatSync(filePath);
+        let now = new Date(Date.now());
+        let expireAt = new Date(
+          new Date(fileStat.mtime).getTime() + tmpFileTTL * 1000
+        );
 
-    let count = Object.keys(result).length;
+        if (expireAt < now) {
+          fs.unlinkSync(filePath);
+          result.push(fileName);
+        }
+      }
+    });
+
+    let count = result.length;
 
     if (count) {
-      console.log(`Deleted ${count} expired file(s) in /public${PUBLIC_TMP}`);
+      let timestamp = new Date(Date.now());
+      console.log(
+        `[${timestamp.toISOString()}] Deleted ${count} expired file(s) in /public${PUBLIC_TMP} :`
+      );
       console.log(result);
     }
   });

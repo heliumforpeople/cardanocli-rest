@@ -1,8 +1,10 @@
 package-lock.json
 config.yaml
-/tmp
-/priv
-/public/tmp
+tmp/
+priv/
+public/tmp/*
+!public/tmp
+!public/tmp/.gitkeep
 
 # Logs
 logs

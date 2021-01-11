@@ -2,6 +2,7 @@ package-lock.json
 config.yaml
 /tmp
 /priv
+/public/tmp
 
 # Logs
 logs

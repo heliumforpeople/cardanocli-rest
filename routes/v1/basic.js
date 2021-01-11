@@ -73,11 +73,4 @@ router.get("/getDownloadUrl", function (req, res, next) {
   res.send(initDownload(req));
 });
 
-/**
- * Redirect to requested file URL for direct download
- */
-router.get("/download", function (req, res, next) {
-  res.redirect(initDownload(req));
-});
-
 module.exports = router;

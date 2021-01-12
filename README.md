@@ -8,6 +8,8 @@ The cardanocli-js library can be initiated to use a http provider or a local `ca
 By leveraging this capability, you can now use the same underlying library to build portable software that can connect
 and submit transaction on the network. Sound's great right?!
 
+> **!!! CAUTION** : **API Security Authentication** is not yet available and will be part of future improvement.
+
 ## REST server API Documentation
 
 You can find more information on the REST API by following the link bellow:

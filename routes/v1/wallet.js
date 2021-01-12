@@ -31,7 +31,7 @@ router.get("/:account/addressBuild", function (req, res, next) {
  */
 router.get("/:account/stakeAddressBuild", function (req, res, next) {
   res.setHeader('content-type', 'text/plain');
-  res.send(cardanoCli.stakeAddressKeyGen(req.params.account));
+  res.send(cardanoCli.stakeAddressBuild(req.params.account));
 });
 
 /**

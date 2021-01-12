@@ -33,6 +33,7 @@ router.get("/queryTip", function (req, res, next) {
  * Return KES Period number
  */
 router.get("/KESPeriod", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send("" + cardanoCli.KESPeriod());
 });
 
@@ -40,6 +41,7 @@ router.get("/KESPeriod", function (req, res, next) {
  * Convert ADA to Lovelace
  */
 router.get("/toLovelace/:ada", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send("" + cardanoCli.toLovelace(req.params.ada));
 });
 
@@ -47,6 +49,7 @@ router.get("/toLovelace/:ada", function (req, res, next) {
  * Convert Lovelace to ADA
  */
 router.get("/toAda/:lovelace", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send("" + cardanoCli.toAda(req.params.lovelace));
 });
 
@@ -70,6 +73,7 @@ const initDownload = (req) => {
  * Return download URL of requested file
  */
 router.get("/getDownloadUrl", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send(initDownload(req));
 });
 

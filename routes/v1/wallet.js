@@ -22,6 +22,7 @@ router.get("/:account/stakeAddressKeyGen", function (req, res, next) {
  * Generate Payment Address and return file path
  */
 router.get("/:account/addressBuild", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send(cardanoCli.addressBuild(req.params.account));
 });
 
@@ -29,6 +30,7 @@ router.get("/:account/addressBuild", function (req, res, next) {
  * Generate Account Stake Address and return file path
  */
 router.get("/:account/stakeAddressBuild", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send(cardanoCli.stakeAddressKeyGen(req.params.account));
 });
 
@@ -36,6 +38,7 @@ router.get("/:account/stakeAddressBuild", function (req, res, next) {
  * Generate Script Address from json script and return file path
  */
 router.post("/addressBuildScript", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send(cardanoCli.addressBuildScript(req.body));
 });
 
@@ -66,6 +69,7 @@ router.get("/addressInfo/:address", function (req, res, next) {
 router.get(
   "/:account/stakeAddressRegistrationCertificate",
   function (req, res, next) {
+    res.setHeader('content-type', 'text/plain');
     res.send(
       cardanoCli.stakeAddressRegistrationCertificate(req.params.account)
     );
@@ -78,6 +82,7 @@ router.get(
 router.get(
   "/:account/stakeAddressDeregistrationCertificate",
   function (req, res, next) {
+    res.setHeader('content-type', 'text/plain');
     res.send(
       cardanoCli.stakeAddressDeregistrationCertificate(req.params.account)
     );
@@ -90,6 +95,7 @@ router.get(
 router.get(
   "/:account/stakeAddressDelegationCertificate",
   function (req, res, next) {
+    res.setHeader('content-type', 'text/plain');
     res.send(
       cardanoCli.stakeAddressDelegationCertificate(
         req.params.account,
@@ -103,6 +109,7 @@ router.get(
  * Return Account Stake Address Key Hash
  */
 router.get("/:account/stakeAddressKeyHash", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send(cardanoCli.stakeAddressKeyHash(req.params.account));
 });
 
@@ -110,6 +117,7 @@ router.get("/:account/stakeAddressKeyHash", function (req, res, next) {
  * Return Account Payment Address Key Hash
  */
 router.get("/:account/addressKeyHash", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send(cardanoCli.addressKeyHash(req.params.account));
 });
 

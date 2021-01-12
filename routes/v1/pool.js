@@ -22,6 +22,7 @@ router.get("/:poolName/nodeKeyGen", function (req, res, next) {
  * Generate Pool Operation Certificate
  */
 router.get("/:poolName/nodeIssueOpCert", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send(cardanoCli.nodeIssueOpCert(req.params.poolName));
 });
 
@@ -36,6 +37,7 @@ router.get("/:poolName/nodeKeyGenVRF", function (req, res, next) {
  * Return Stake Pool Id
  */
 router.get("/:poolName/stakePoolId", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send(cardanoCli.stakePoolId(req.params.poolName));
 });
 
@@ -43,6 +45,7 @@ router.get("/:poolName/stakePoolId", function (req, res, next) {
  * Return Hash from input metadata json
  */
 router.post("/stakePoolMetadataHash", function (req, res, next) {
+  res.setHeader('content-type', 'text/plain');
   res.send(cardanoCli.stakePoolMetadataHash(req.body));
 });
 
@@ -52,6 +55,7 @@ router.post("/stakePoolMetadataHash", function (req, res, next) {
 router.post(
   "/:poolName/stakePoolRegistrationCertificate",
   function (req, res, next) {
+    res.setHeader('content-type', 'text/plain');
     res.send(
       cardanoCli.stakePoolRegistrationCertificate(req.params.poolName, req.body)
     );
@@ -64,6 +68,7 @@ router.post(
 router.get(
   "/:poolName/stakePoolDeregistrationCertificate/:epoch",
   function (req, res, next) {
+    res.setHeader('content-type', 'text/plain');
     res.send(
       cardanoCli.stakePoolDeregistrationCertificate(
         req.params.poolName,

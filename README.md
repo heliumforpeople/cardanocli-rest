@@ -41,7 +41,7 @@ PM2 is a daemon process manager that will help you manage and keep your applicat
 
 1. Install **PM2** with `npm`:
 
-        npm install pm2 -g
+        sudo npm install pm2 -g
 
 2. Start PM2 using the config file `ecosystem.config.js` at the project root:
 

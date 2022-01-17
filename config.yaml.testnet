@@ -1,0 +1,15 @@
+cli:
+    # Cardano network to be used [Default: 'mainnet']
+    network: testnet-magic 1097911063
+    # Cardano era to be used [Default: 'allegra']
+    era: allegra
+    # Directory where file are created. [Default: '.']
+    dir: '/home/node/data'
+    # Shelley Genesis file location.
+    # https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html
+    shelleyGenesisPath: '/home/node/app/testnet-shelley-genesis.json'
+    # cardano-node socket directory path. [Default: null]
+    socketPath: /home/node/ipc/node.socket
+helper:
+    # Time in seconds after which download files are removed
+    tmpFileTTL: 600

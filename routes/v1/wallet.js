@@ -27,6 +27,19 @@ router.get("/:account/addressBuild", function (req, res, next) {
 });
 
 /**
+ * Generate Payment Address with options and return file path
+ */
+router.get("/:account/addressBuildWithOptions", function (req, res, next) {
+  const account = req.params.account;
+
+  res.setHeader('content-type', 'text/plain');
+  res.send(cardanoCli.addressBuild(account, {
+    paymentVkey: `/home/node/data/priv/wallet/${account}/${account}.payment.vkey`,
+    stakeVkey: `/home/node/data/priv/wallet/${account}/${account}.stake.vkey`,
+  }));
+});
+
+/**
  * Generate Account Stake Address and return file path
  */
 router.get("/:account/stakeAddressBuild", function (req, res, next) {

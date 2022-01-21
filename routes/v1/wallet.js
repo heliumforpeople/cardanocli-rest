@@ -35,7 +35,7 @@ router.get("/:account/addressBuildWithOptions", function (req, res, next) {
   res.setHeader('content-type', 'text/plain');
   res.send(cardanoCli.addressBuild(account, {
     paymentVkey: `/home/node/data/priv/wallet/${account}/${account}.payment.vkey`,
-    stakeVkey: `/home/node/data/priv/wallet/${account}/${account}.stake.vkey`,
+    stakeVkey: `/home/node/data/priv/wallet/${account}/${account}.stake.vkey`
   }));
 });
 

@@ -73,6 +73,8 @@ router.post("/transactionSubmit", function (req, res, next) {
  */
 router.post("/transactionPolicyid", function (req, res, next) {
   res.setHeader("content-type", "text/plain");
+  console.log("🚀 ~", cardanoCli.transactionPolicyid(req.body))
+  
   res.send(cardanoCli.transactionPolicyid(req.body));
 });
 

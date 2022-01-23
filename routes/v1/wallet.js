@@ -143,7 +143,8 @@ router.get("/:account/wallet", function (req, res, next) {
   result["balance"] = result.balance();
   result["reward"] = result.reward();
 
-  res.json(result);
+  console.log("🚀 ~ result", result);
+  res.send(result);
 });
 
 module.exports = router;

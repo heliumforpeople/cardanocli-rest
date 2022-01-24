@@ -2,7 +2,7 @@ cli:
     # Cardano network to be used [Default: 'mainnet']
     network: mainnet
     # Cardano era to be used [Default: 'allegra']
-    era: allegra
+    era: alonzo
     # Directory where file are created. [Default: '.']
     dir: '.'
     # Shelley Genesis file location.

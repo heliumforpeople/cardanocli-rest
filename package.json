@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Berry-Pool/cardanocli-rest#readme",
   "dependencies": {
-    "cardanocli-js": "git+https://github.com/Berry-Pool/cardanocli-js.git",
+    "cardanocli-js": "git@github.com:heliumforpeople/cardanocli-js.git",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
